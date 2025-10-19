@@ -179,5 +179,3 @@ RP.Remotes.PartyRemote.OnServerEvent:Connect(function(plr, params)
 end)
 
 Players.PlayerRemoving:Connect(handlePlayerLeave)
-
-    --Adalovelace12389
