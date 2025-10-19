@@ -1,0 +1,25 @@
+local lighting = game:GetService("Lighting")
+
+-- ciclo de dia e de noite
+
+local dayLength = 720 -- Change this to the length of your day in seconds
+local nightLength = 720 -- Change this to the length of your night in seconds
+
+
+while true do
+	-- Day time: 6 AM to 6 PM
+	for i = 6 * 60, 18 * 60 do
+		lighting:SetMinutesAfterMidnight(i)
+		wait(dayLength / (12 * 100))
+	end
+
+	-- Night time: 6 PM to 6 AM
+	for i = 18 * 60, 24 * 60 do
+		lighting:SetMinutesAfterMidnight(i)
+		wait(nightLength / (12 * 60))
+	end
+	for i = 0, 6 * 60 do
+		lighting:SetMinutesAfterMidnight(i)
+		wait(nightLength / (12 * 60))
+	end
+end
